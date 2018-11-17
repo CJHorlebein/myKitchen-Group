@@ -11,10 +11,10 @@ Date: Nov 15, 2018
 ## Project Concept:
 myKitchen is designed to allow users to pull recipes using an recipe API and compare ingredient requirements against what users currently have in their kitchen. 
 
-###Changelog:
+### Changelog:
 1. 20181118 - initial commit of myKitchen
 
-###Food2Fork Object
+### Food2Fork Object
 ```
     {"recipe": {
         "publisher": "Closet Cooking", 
