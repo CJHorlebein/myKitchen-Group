@@ -1,0 +1,50 @@
+@media (min-width: 576px) {
+    nav {
+        border-right: 5px solid #EAA038FF;
+    }
+    #navBar{
+        width: 25%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+
+    #main-container {
+        position: relative;
+        width: 75%;
+        left: 25%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    #navBar{
+        width: 20%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+
+    #main-container {
+        position: relative;
+        width: 80%;
+        left: 20%;
+    }
+}
+
+@media (min-width: 992px) {
+    #navBar{
+        width: 15%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+
+    #main-container {
+        position: relative;
+        width: 85%;
+        left: 15%;
+    }
+}
+
+
