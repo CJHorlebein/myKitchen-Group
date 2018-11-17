@@ -1,0 +1,30 @@
+body{
+    background-color:#F4E285;
+}
+.btn{
+    background-color: #33B56A
+
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#EFE93E;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+#content{
+    margin-left: 170px;
+}
+    #content-board{
+        background-color: brown;
+    }
+#favrecipe{
+    margin-left: 180px;
+}
+    #recipe-cards{
+        background-color: #EF6461;
+    }

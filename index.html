@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Kitchen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://bootswatch.com/4/darkly/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <div class="row flex-wrap mx-0">
+
+        <div class="col-12 col-sm-3 col-lg-2 px-0 mx-0 position-fixed">
+
+            <div class="sidenav mx-2 shadow ht-lg-100%">
+
+                <nav class="navbar navbar-expand-sm w-100 align-items-start">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+                        <div class="navbar-nav flex-column w-80 mx-auto">
+
+                            <logo class="logo">
+                                <img src="./logo.jpg" style="width:110px; border-radius:15px";/>
+                            </logo>
+
+                            <a class="nav-item btn text-white my-4 active" href="./index.html">Home</a>
+                            <a class="nav-item btn text-white my-4" href="./dashboard/dashboard.html">Dashboard</a>
+                            <a class="nav-item btn text-white my-4" href="./recipe/index.html">Recipes</a>
+                            
+                        </div>
+
+                    </div>
+
+                </nav>
+
+            </div>
+
+        </div>
+    
+        <div class="col-12 col-sm-9 col-lg-10 px-0 position-relative" id="content">
+
+            <div class="row flex-wrap mx-0 ">
+
+                <div class="w-75 mx-2 my-5 mx-auto d-flex text-center justify-content-center" style="color:black" >
+                        <h1 class="font-weight-bold">My  Kitchen</h1>
+                </div>
+
+            </div>
+            <div class="row flex-wrap mx-0">
+
+                <div class="w-40% mx-2 my-5 mx-auto p-3 shadow" style="border-radius: 15px;" id="content-board">
+                    
+                    <p class="font-weight-bold font-italic" style="font-size:20px;">
+                        You get home from a long day of work. Your body and your mind and both out of energy. Then all of a sudden your stomach cries out for help. You run to the refrigerator in search of nourishment. 
+                        Then comes the bad news. There are only ingredients rather than acctual food. The frustration sets in. You don't even know what to make with what you have.
+                        Thats where we come in. You tell us what you have and we will give you a recipe you could make with it.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-link"> <a class="text-white" href="./loginPage/login.html">Sign up/ Sign in</a></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row flex-wrap mx-0" id="favrecipe">
+
+                <div class="d-flex flex-wrap justify-content-between w-40% shadow" id="recipe-cards">
+                    
+                    <div class="card" style="width: 12rem;">
+                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn text-white ">Go somewhere</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 12rem;">
+                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn text-white">Go somewhere</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 12rem;">
+                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn text-white">Go somewhere</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 12rem;">
+                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn text-white">Go somewhere</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 12rem;">
+                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn text-white">Go somewhere</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
