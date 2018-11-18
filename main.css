@@ -16,9 +16,15 @@ body{
     overflow-x: hidden;
     padding-top: 20px;
 }
+    .navbar-toggler{
+        width: 40px;
+        height: 30px;
+        padding: 0px;
+        border-radius: 5px;
+    }
 
 #content-board{
-    background-color: brown;
+    background-image: url(./IMG_4171.JPG);
 }
 #favrecipe{
     margin-left: 180px;
