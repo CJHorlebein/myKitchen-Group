@@ -12,7 +12,7 @@
     <title>Recipe Search</title>
   </head>
   <body>
-    <nav id="navBar" class="navbar navbar-expand-sm navbar-light bg-primary align-items-start ">
+    <nav id="navBar" class="navbar navbar-expand-sm navbar-light align-items-start ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,44 +20,44 @@
             <div class="navbar-nav flex-column w-75 mx-auto">
                 <a class="navbar-brand my-3 text-center mx-0" href="/">My Kitchen</a>
                 <a class="nav-item btn btn-success my-2" href="/">Home</a>
-                <a class="nav-item btn btn-success my-2" href="/">Features</a>
-                <a class="nav-item btn btn-success my-2" href="/">Pricing</a>
-                <a class="nav-item btn btn-success my-2" href="/">Pricing</a>
+                <a class="nav-item btn btn-success my-2" href="/">Dashboard</a>
+                <a class="nav-item btn btn-success my-2" href="/">Sign Out</a>
             </div>
         </div>
     </nav>
-    <div id="main-container" class="full-height bg-secondary">
+    <div id="main-container" class="full-height">
             <div class="text-center">
                 <h1 class="pt-5">Search for a recipe!</h1>
-                <form class="bg-secondary justify-content-center w-75 mt-3 mx-auto">
-                    <input class="w-50" type=text /> <br />
+                <form class="justify-content-center w-75 mt-3 mx-auto">
+                    <input id="searchBar" class="w-lg-50 w-75 shadow-sm" type=text /> <br />
                     <h2 class="my-2">Or let us decide!</h2>
-                    <select name="cousine">
-                        <option selected="true" disabled="disabled">Cousine</option>
-                        <option value="random">Any</option>
+                    <select id="cousine" class="border" name="cousine">
+                        <option selected="true" value="" disabled="disabled">Cuisine</option>
+                        <option value="">Any</option>
                         <option value="mexican">Mexican</option>
                         <option value="italian">Italian</option>
-                        <option value="italian">Indian</option>
+                        <option value="indian">Indian</option>
                     </select>
-                    <select name="meats">
-                        <option selected="true" disabled="disabled">Meats</option>
-                        <option value="random">Any</option>
-                        <option value="mexican">Chicken</option>
-                        <option value="italian">Steak</option>
-                        <option value="italian">Pork</option>
+                    <select id="meats" class="border" name="meats">
+                        <option selected="true" value="" disabled="disabled">Meats</option>
+                        <option value="">Any</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="steak">Steak</option>
+                        <option value="pork">Pork</option>
                     </select>
-                    <select name="preferences">
-                        <option selected="true" disabled="disabled">Dietary Restrictions</option>
-                        <option value="random">None</option>
-                        <option value="mexican">Vegatarian</option>
-                        <option value="italian">Vegan</option>
-                    </select>
-                    <button class="btn btn-primary mt-2" type="submit">Submit</button>
+                    <select id="restrictions" class="border" name="preferences">
+                        <option selected="true" value="" disabled="disabled">Restrictions</option>
+                        <option value="">None</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                    </select> <br />
+                    <button id="submit" class="btn btn-primary mt-2" type="submit">Submit</button>
                 </form>
             </div>
-            <div id="recipes" class="d-flex flex-wrap justify-content-start mt-3 px-5 mx-auto row">
+            <div id="recipes" class="d-flex flex-wrap justify-content-start py-3 px-5 mx-auto row">
             </div>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../apikey.js"></script>
     <script src="recipe.js"></script>
     <!-- Optional JavaScript -->
