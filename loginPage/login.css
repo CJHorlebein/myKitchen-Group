@@ -1,3 +1,7 @@
+body{
+    background-color:#F4E285;
+}
+
 @media (min-width: 576px) {
     nav {
         border-right: 5px solid #EAA038FF;
@@ -46,3 +50,5 @@
         left: 15%;
     }
 }
+
+
