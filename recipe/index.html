@@ -31,25 +31,23 @@
                 <form class="justify-content-center w-75 mt-3 mx-auto">
                     <input id="searchBar" class="w-lg-50 w-75 shadow-sm" type=text /> <br />
                     <h2 class="my-2">Or let us decide!</h2>
-                    <select id="cousine" class="border" name="cousine">
+                    <select id="cuisines" class="border" name="cuisines">
                         <option selected="true" value="" disabled="disabled">Cuisine</option>
                         <option value="">Any</option>
-                        <option value="mexican">Mexican</option>
-                        <option value="italian">Italian</option>
-                        <option value="indian">Indian</option>
                     </select>
                     <select id="meats" class="border" name="meats">
-                        <option selected="true" value="" disabled="disabled">Meats</option>
+                        <option selected="true" value="" disabled="disabled">Meat</option>
                         <option value="">Any</option>
-                        <option value="chicken">Chicken</option>
-                        <option value="steak">Steak</option>
-                        <option value="pork">Pork</option>
                     </select>
-                    <select id="restrictions" class="border" name="preferences">
+                    <select id="diets" class="border" name="diets">
                         <option selected="true" value="" disabled="disabled">Restrictions</option>
-                        <option value="">None</option>
-                        <option value="Vegetarian">Vegetarian</option>
-                        <option value="Vegan">Vegan</option>
+                        <option value="">Any</option>
+                        <option value="386^Vegan">Vegan</option>
+                        <option value="387^Lacto-ovo vegetarian">Lacto-ovo vegetarian</option>
+                        <option value="388^Lacto vegetarian">Lacto vegetarian</option>
+                        <option value="389^Ovo vegetarian">Ovo vegetarian</option>
+                        <option value="390^Pescetarian">Pescetarian</option>
+                        <option value="403^Paleo">Paleo</option>
                     </select> <br />
                     <button id="submit" class="btn btn-primary mt-2" type="submit">Submit</button>
                 </form>
