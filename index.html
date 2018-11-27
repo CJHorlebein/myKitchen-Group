@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="https://bootswatch.com/4/darkly/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
@@ -15,12 +15,10 @@
 
         <div class="col-12 col-sm-3 col-lg-2 px-0 mx-0" id="sideNav">
 
-            <nav class="navbar navbar-expand-sm w-100 align-items-start">
+            <nav class="navbar navbar-expand-sm w-100 navbar-dark align-items-start">
 
-                <button type="button" class="navbar-toggler" style="background-color: #F8FF3D" data-toggle="collapse" data-target="#navbarNavAltMarkup">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -72,7 +70,7 @@
                 <div class="d-flex flex-wrap justify-content-around shadow" id="recipe-cards">
                     
                     <div class="card m-3" style="width: 12rem;">
-                        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                        <img id="card1" class="card-img-top" alt="Card image cap" >
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                         </div>
@@ -112,8 +110,10 @@
             
         </div>
     </div>
+    <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
 </body>
 </html>

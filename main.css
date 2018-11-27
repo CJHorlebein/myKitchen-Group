@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color:#F4E285;
 }
 .btn{
@@ -21,8 +21,9 @@ body{
         height: 30px;
         padding: 0px;
         border-radius: 5px;
+        border: 
     }
-
+ 
 #content-board{
     background-image: url(./IMG_4171.JPG);
 }
@@ -31,4 +32,83 @@ body{
 }
     #recipe-cards{
         background-color: #EF6461;
+    } */
+
+
+
+    body{
+    background-color:#F4E285;
+}
+#content-board{
+    background-image: url(./IMG_4171.JPG);
+}
+.btn{
+    background-color: #33B56A
+
+}
+
+@media (min-width: 576px) {
+    
+    #sideNav{
+        background-color:#EFE93E;
+        width: 25%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
     }
+
+    #content {
+        position: relative;
+        width: 75%;
+        left: 25%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    #sideNav{
+        background-color:#EFE93E;
+        width: 25%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+
+    #content {
+        position: relative;
+        width: 75%;
+        left: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #sideNav{
+        background-color:#EFE93E;
+        width: 25%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+
+    #content {
+        position: relative;
+        width: 75%;
+        left: 25%;
+    }
+}
+@media (min-width: 1024px) {
+    #sideNav{
+        background-color:#EFE93E;
+        width: 25%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+
+    #content {
+        position: relative;
+        width: 75%;
+        left: 25%;
+    }
+}
+
