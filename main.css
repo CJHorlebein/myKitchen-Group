@@ -36,8 +36,8 @@
 
 
 
-    body{
-    background-color:#F4E285;
+body{
+background-color:#F4E285;
 }
 #content-board{
     background-image: url(./IMG_4171.JPG);
@@ -46,6 +46,13 @@
     background-color: #33B56A
 
 }
+#favrecipe{
+    margin-left: 10px;
+}
+#description{
+    margin-left: 10px;
+}
+
 
 @media (min-width: 576px) {
     
@@ -84,7 +91,7 @@
 @media (min-width: 992px) {
     #sideNav{
         background-color:#EFE93E;
-        width: 25%;
+        width: 15%;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -92,14 +99,14 @@
 
     #content {
         position: relative;
-        width: 75%;
-        left: 25%;
+        width: 85%;
+        left: 15%;
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
     #sideNav{
         background-color:#EFE93E;
-        width: 25%;
+        width: 15%;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -107,8 +114,9 @@
 
     #content {
         position: relative;
-        width: 75%;
-        left: 25%;
+        width: 85%;
+        left: 15%;
+        padding-right: 15px;
     }
 }
 
