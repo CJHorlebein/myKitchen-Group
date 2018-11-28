@@ -1,7 +1,4 @@
 @media (min-width: 576px) {
-    nav {
-        border-right: 5px solid #EAA038FF;
-    }
     #navBar{
         width: 25%;
         position: fixed;
@@ -13,6 +10,22 @@
         position: relative;
         width: 75%;
         left: 25%;
+    }
+
+    .w-sm-25{
+        width: 25%;
+    }
+
+    .w-sm-50{
+        width: 50%;
+    }
+
+    .w-sm-75{
+        width: 75%;
+    }
+
+    .w-sm-100{
+        width: 100%;
     }
 
 }
@@ -30,8 +43,23 @@
         width: 80%;
         left: 20%;
     }
-}
 
+    .w-md-25{
+        width: 25%;
+    }
+
+    .w-md-50{
+        width: 50%;
+    }
+
+    .w-md-75{
+        width: 75%;
+    }
+
+    .w-md-100{
+        width: 100%;
+    }
+}
 @media (min-width: 992px) {
     #navBar{
         width: 15%;
@@ -45,6 +73,48 @@
         width: 85%;
         left: 15%;
     }
+
+    .w-lg-25{
+        width: 25%;
+    }
+
+    .w-lg-50{
+        width: 50%;
+    }
+
+    .w-lg-75{
+        width: 75%;
+    }
+
+    .w-lg-100{
+        width: 100%;
+    }
 }
 
 
+.imgCard {
+    height: 250px;
+}
+
+body{
+    background-color:#F4E285;
+    min-width: 400px;
+}
+
+.btn{
+    background-color: #33B56A;
+    border-color: #33B56A;
+}
+
+
+#navBar {
+    background-color:#EFE93E;
+}
+
+.recipe-cards{
+    background-color: #EF6461;
+}
+
+.bblue {
+    background-color: #88CCf1;
+}
