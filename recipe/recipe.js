@@ -9,6 +9,18 @@ function renderSelects(options, optionType){
 renderSelects(meats, "meats");
 renderSelects(cuisines, "cuisines");
 
+document.getElementById('sign-out').addEventListener('click', function(){
+    firebase.auth().signOut().then(function() {
+        alert("You have signed out.");
+        window.location="http://localhost:3000/index.html";
+    }).catch(function(error) {
+        alert("Something went Wrong!");
+    });
+});
+
+
+
+
 function mealDetails(mealID, ingredients, foodImage){
     var url = `http://api.yummly.com/v1/api/recipe/${mealID}?_app_id=${apiID}&_app_key=${apiKey}`;
     var ingredients = ingredients.split(",");
