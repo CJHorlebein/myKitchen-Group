@@ -2,10 +2,18 @@ body{
     background-color:#F4E285;
 }
 
+.btn{
+    background-color: #33B56A;
+    border-color: #33B56A;
+}
+
+
+#navBar {
+    background-color:#EFE93E;
+}
+
 @media (min-width: 576px) {
-    nav {
-        border-right: 5px solid #EAA038FF;
-    }
+    
     #navBar{
         width: 25%;
         position: fixed;
