@@ -9,10 +9,18 @@ function renderSelects(options, optionType){
 renderSelects(meats, "meats");
 renderSelects(cuisines, "cuisines");
 
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        console.log(user.displayName)
+    } else {
+        window.location = "http://localhost:3000/challenge-2/index.html";
+    }
+});
 document.getElementById('sign-out').addEventListener('click', function(){
     firebase.auth().signOut().then(function() {
         alert("You have signed out.");
-        window.location="http://localhost:3000/index.html";
+        window.location="http://localhost:3000/";
     }).catch(function(error) {
         alert("Something went Wrong!");
     });
