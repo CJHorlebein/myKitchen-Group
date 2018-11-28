@@ -12,25 +12,13 @@ Date: Nov 15, 2018
 myKitchen is designed to allow users to pull recipes using an recipe API and compare ingredient requirements against what users currently have in their kitchen. 
 
 ### Changelog:
-1. 20181118 - initial commit of myKitchen
+1. 20181117 - Initial commit of myKitchen.
+2. 20181118 - Added Recipe HTML/CSS for to display recipe cards.
+3. 20181118 - Updated Recipe JS to use Food2Fork API.
+4. 20181121 - Updated Recipe page to link to details recipe with list of ingredients.
+5. 20181125 - Updated Recipe JS to use Yummly API instead of Food2Fork.
+6. 20181127 - Added Login Page HTML/CSS/JS to myKitchen
+7. 20181127 - Added Home Page HTML/CSS/JS to myKitchen
 
-### Food2Fork Object
-```
-    {"recipe": {
-        "publisher": "Closet Cooking", 
-        "f2f_url": "http://food2fork.com/view/35382",
-        "ingredients": ["2 jalapeno peppers, cut in half lengthwise and seeded",
-        "2 slices sour dough bread", 
-        "1 tablespoon butter, room temperature", 
-        "2 tablespoons cream cheese, room temperature",
-        "1/2 cup jack and cheddar cheese, shredded", 
-        "1 tablespoon tortilla chips, crumbled\n"], 
-        "source_url": "http://www.closetcooking.com/2011/04/jalapeno-popper-grilled-cheese-sandwich.html", 
-        "recipe_id": "35382", 
-        "image_url": "http://static.food2fork.com/Jalapeno2BPopper2BGrilled2BCheese2BSandwich2B12B500fd186186.jpg", 
-        "social_rank": 100.0, 
-        "publisher_url": "http://closetcooking.com", 
-        "title": "Jalapeno Popper Grilled Cheese Sandwich"
-        }
-    }
-```
+### Project Overview:
+Uses the Yummly recipe API, Firebase Login, and Firebase storage. Users are able to login to myKitchen using Firebase and see the ingredients currently available in their kitchen and add or remove items from their current kitchen inventory which is stored within their user information on firebase. They then can look up a recipe using the implemented Yummly API and compare the required ingredients against what they currently have available. 
