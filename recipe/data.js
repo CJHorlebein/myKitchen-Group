@@ -1,9 +1,3 @@
-var meats = [
-    "chicken",
-    "pork",
-    "steak"
-];
-
 var searchItems = [
     "meats", 
     "cuisines", 
@@ -22,7 +16,7 @@ var meats = [
     "steak"
 ];
 
-var inventory = [
+var pantry = [
     "eggs",
     "Virginia Baked Ham",
     "bbq sauce",

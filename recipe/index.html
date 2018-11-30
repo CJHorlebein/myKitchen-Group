@@ -23,13 +23,6 @@
         };
         firebase.initializeApp(config);
         var database = firebase.database()
-        var user = firebase.auth().currentUser;
-        var name;
-        console.log(user);
-        if (user != null) {
-            name = user.displayName;
-        }
-        console.log(name);
     </script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
@@ -54,34 +47,6 @@
         </div>
     </nav>
     <div id="main-container" class="full-height">
-            <div class="text-center">
-                <h1 class="pt-5">Search for a recipe!</h1>
-                <form class="justify-content-center w-75 mt-3 mx-auto">
-                    <input id="searchBar" class="w-lg-50 w-75 shadow-sm" type=text /> <br />
-                    <h2 class="my-2">Or let us decide!</h2>
-                    <select id="cuisines" class="border" name="cuisines">
-                        <option selected="true" value="" disabled="disabled">Cuisine</option>
-                        <option value="">Any</option>
-                    </select>
-                    <select id="meats" class="border" name="meats">
-                        <option selected="true" value="" disabled="disabled">Meat</option>
-                        <option value="">Any</option>
-                    </select>
-                    <select id="diets" class="border" name="diets">
-                        <option selected="true" value="" disabled="disabled">Restrictions</option>
-                        <option value="">Any</option>
-                        <option value="386^Vegan">Vegan</option>
-                        <option value="387^Lacto-ovo vegetarian">Lacto-ovo vegetarian</option>
-                        <option value="388^Lacto vegetarian">Lacto vegetarian</option>
-                        <option value="389^Ovo vegetarian">Ovo vegetarian</option>
-                        <option value="390^Pescetarian">Pescetarian</option>
-                        <option value="403^Paleo">Paleo</option>
-                    </select> <br />
-                    <button id="submit" class="btn btn-success mt-2" type="submit">Submit</button>
-                </form>
-            </div>
-            <div id="recipes" class="d-flex flex-wrap justify-content-start py-3 px-5 mx-auto row">
-            </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../apikey.js"></script>
