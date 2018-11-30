@@ -46,9 +46,10 @@
                 <a class="text-center" href="/">
                     <img class="w-100 rounded" src="../logo.jpg" alt="myKitchen Logo">
                 </a>
-                <a class="nav-item btn btn-success my-2" href="/">Home</a>
-                <a class="nav-item btn btn-success my-2" href="/">Dashboard</a>
-                <a class="nav-item btn btn-success my-2" id="sign-out" href="/">Sign Out</a>
+                <a class="nav-item btn btn-success px-1 my-2" href="../">Home</a>
+                <a class="nav-item btn btn-success px-1 my-2" href="../dashboard">Dashboard</a>
+                <a class="nav-item btn btn-success px-1 my-2 active" href="/">Recipe</a>
+                <a class="nav-item btn r-1 px-1 my-2" onClick="signOut()" id="sign-out" href="../">Sign Out</a>
             </div>
         </div>
     </nav>
@@ -76,7 +77,7 @@
                         <option value="390^Pescetarian">Pescetarian</option>
                         <option value="403^Paleo">Paleo</option>
                     </select> <br />
-                    <button id="submit" class="btn btn-primary mt-2" type="submit">Submit</button>
+                    <button id="submit" class="btn btn-success mt-2" type="submit">Submit</button>
                 </form>
             </div>
             <div id="recipes" class="d-flex flex-wrap justify-content-start py-3 px-5 mx-auto row">
