@@ -12,6 +12,12 @@ body{
     background-color:#EFE93E;
 }
 
+.r-1{
+    color: white;
+    background-color: #EF6461;
+    border-color: #EF6461;
+}
+
 @media (min-width: 576px) {
     
     #navBar{
