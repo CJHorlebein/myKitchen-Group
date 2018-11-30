@@ -7,32 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="login.css" />
-    
-</head>
-<body>
-
-    <nav id="navBar" class="navbar navbar-expand-sm navbar-light align-items-start ">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav flex-column w-75 mx-auto">
-                <a class="navbar-brand my-3 text-center mx-0" href="../">My Kitchen</a>
-                <a class="nav-item btn btn-success my-2" href="../">Home</a>
-                <a class="nav-item btn btn-success my-2" href="../dashboard/dashboard.html">Dashboard</a>
-                <a class="nav-item btn btn-success my-2" href="../recipe">Recipes</a>
-            </div>
-        </div>
-    </nav>
-
-    <div id='firebaseui-auth-container'>
-        
-    </div>
-    <div id="loader">Loading...</div>
-
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <script>
         // Initialize Firebase
         var config = {
@@ -44,10 +19,38 @@
             messagingSenderId: "296949783286"
         };
         firebase.initializeApp(config);
-        var database = firebase.database()
     </script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+</head>
+<body>
+
+    <nav id="navBar" class="navbar navbar-expand-sm navbar-light align-items-start ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav flex-column w-75 mx-auto">
+                <a class="navbar-brand my-3 text-center mx-0" href="../">My Kitchen</a>
+                <a class="text-center" href="/">
+                    <img class="w-100 rounded" src="../logo.jpg" alt="myKitchen Logo">
+                </a>
+                <a class="nav-item btn btn-success my-2" href="../">Home</a>
+                <a class="nav-item btn btn-success my-2" href="../dashboard/dashboard.html">Dashboard</a>
+                <a class="nav-item btn btn-success my-2" href="../recipe">Recipes</a>
+                <a class="nav-iten btn r-1 px-1 my-2" onClick="signOut()" href="../"></a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-container" class="full-height">
+        <div class="mt-5 pt-5 justify-content-center" id='firebaseui-auth-container'>
+            
+        </div>
+        <div id="loader">Loading...</div>
+    </div>
+
+    
     <script src="login.js"></script>
 </body>
 </html>
