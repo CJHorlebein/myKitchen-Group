@@ -65,7 +65,7 @@ function writeUserData() {
   ingredient = "";
 
 
-  console.log(UID)
+
 }
 
 
