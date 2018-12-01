@@ -9,7 +9,7 @@ function signOut(){
 }
 
 function picCheck(picture){
-    if(picture && picture != "null=s90-c"){
+    if(picture && picture != "null=s90"){
         return picture[0].slice(0, -4);
     }
     return "https://cdn.dribbble.com/users/1012566/screenshots/4187820/topic-2.jpg"
@@ -31,15 +31,14 @@ function listIngredients(ingredients){
 function tagMissingIngredients(basic){
     var foodList = Array.from(document.getElementsByClassName("food"));
     for(var i = 0; i < basic.length; i++){
-        foodList[i].className += pantry.indexOf(basic[i]) != -1 ? " text-white" : " y-1";
+        foodList[i].className += ingredients.indexOf(basic[i]) != -1 ? " text-white" : " y-1";
     }
 }
 
 function renderMealDetails(mealDetails){
-    
     var meal = {
         name: mealDetails.name,
-        pic: picCheck([mealDetails.images[0].imageUrlsBySize["90"]]),
+        pic: picCheck([mealDetails.images[0].imageUrlsBySize["90"].slice(0,-2)]),
         ingredients: listIngredients(mealDetails.ingredientLines).join(""),
         sourceLink: mealDetails.source.sourceRecipeUrl,
         sourceName: mealDetails.source.sourceDisplayName
@@ -57,7 +56,7 @@ function mealDetails(mealInfo){
     var recipes = document.getElementById('recipes');
     var mealInfo = mealInfo.split(",");
     var ingredients = mealInfo.splice(1);
-    var url = `http://api.yummly.com/v1/api/recipe/${mealInfo[0]}?_app_id=${apiID}&_app_key=${apiKey}`;
+    var url = `http://api.yummly.com/v1/api/recipe/${mealInfo[0]}?_app_id=${apiInfo[0]}&_app_key=${apiInfo[1]}`;
     axios.get(url).then(response => {
         recipes.innerHTML = renderMealDetails(response.data);
         tagMissingIngredients(ingredients);
@@ -73,10 +72,11 @@ function searchFormSubmitted(){
             searchTerm += searchDict[item] + temp;
         }
     });
-    return `http://api.yummly.com/v1/api/recipes?_app_id=${apiID}&_app_key=${apiKey}&q=${searchTerm}&maxResult=32`;
+    return `http://api.yummly.com/v1/api/recipes?_app_id=${apiInfo[0]}&_app_key=${apiInfo[1]}&q=${searchTerm}&maxResult=32`;
 }
 
 function renderRecipeCard(recipe){
+    console.log(recipe.smallImageUrls)
     var details = {
         pic: picCheck(recipe.smallImageUrls),
         name: recipe.recipeName,
@@ -104,6 +104,15 @@ function renderSearchFunction(){
             response.data.matches.forEach(recipe => {
                 recipes.innerHTML += renderRecipeCard(recipe);
             });
+        });
+    });
+}
+
+var ingredients = [];
+function pullIngredients(uid){
+    database.ref(uid).on('value', snapshot => { 
+        snapshot.forEach(entry => {
+            ingredients = entry.val();
         });
     });
 }
@@ -145,7 +154,8 @@ function renderRecipeSearch(){
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        renderRecipeSearch()
+        pullIngredients(user.uid);
+        renderRecipeSearch();
         renderSelects(meats, "meats");
         renderSelects(cuisines, "cuisines");
         renderSearchFunction();
