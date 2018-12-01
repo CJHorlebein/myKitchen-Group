@@ -1,3 +1,11 @@
+var database = firebase.database();
+var apiInfo = []
+database.ref(`apiKey`).on('value', snapshot => {
+    snapshot.forEach(entry =>{
+        apiInfo.push(entry.node_.val());
+    })
+})
+
 var searchItems = [
     "meats", 
     "cuisines", 
@@ -14,15 +22,6 @@ var meats = [
     "chicken",
     "pork",
     "steak"
-];
-
-var pantry = [
-    "eggs",
-    "Virginia Baked Ham",
-    "bbq sauce",
-    "steak",
-    "honey",
-    "milk"
 ];
 
 var diets = [
