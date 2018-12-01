@@ -25,63 +25,34 @@ var database = firebase.database();
 var ingredients = [];
 
 function listenForUpdates(){
-    console.log("I'm a teapot")
-  
-  var list = document.getElementById("list");
-  var foodList = [];
   var pantry = database.ref(`${UID}`);
 
   pantry.on('value',function(snapshot){ 
-
-    while(list.firstChild){
-      list.removeChild(list.firstChild);
-    }
-    
     snapshot.forEach(function(entry){
-      var food = entry.val();
-      foodList.push(food)
-        
-      list.innerHTML += foodList;
+      ingredients = entry.val();
     });
-    ingredients = foodList;
+    if(document.getElementById("list").innerHTML == ""){
+        recallList();
+    }
   });
 };
 
-function writeUserData() {
-    console.log("short and stout")
-    console.log(UID);
-  
-  var ingredient= document.getElementById("input").value;
-  
+function writeUserData(ingredient) {
   if(ingredient == ""){
     alert("Please enter your ingredient.");
     return;
   }
-  
-  ingredients.push(ingredient)
+  ingredients.push(ingredient);
   database.ref(`${UID}`).set({
-    pantry: ingredients,
+    pantry: ingredients
   });
-  ingredient = "";
-
-
-
 }
 
-
-
-
-
-
-
 // code for input box 
- 
-function addNewItem() {
-   
-    var item = document.getElementById("input").value;
+function addNewItem(item) {
     var ul = document.getElementById("list");
     var li = document.createElement("li");
-    li.appendChild(document.createTextNode("- " + item));
+    li.innerHTML = "- " + item;
     ul.appendChild(li);
     document.getElementById("input").value = "";
     li.onclick = removeItem;
@@ -89,9 +60,9 @@ function addNewItem() {
 
 document.onkeyup = function(e) {
     if (e.keyCode == 13) {
-        writeUserData();
-        addNewItem();
-        
+        var item = document.getElementById("input").value;
+        addNewItem(item);
+        writeUserData(item);
     }
 };
 
@@ -99,19 +70,16 @@ function removeItem(e) {
     e.target.parentElement.removeChild(e.target);
 };
 
-
-
-
-
-
+function recallList(){
+    ingredients.forEach(item => {
+        addNewItem(item);
+    });
+}
 
 firebase.auth().onAuthStateChanged(function(user) {
  
     if (user) {
         UID = user.uid 
-        console.log(user);
-        console.log(user.Wu);
-        console.log(user.uid);
         var dashboardHTML = renderDashboard()
         document.getElementById('main-container').innerHTML = dashboardHTML;
         listenForUpdates();
