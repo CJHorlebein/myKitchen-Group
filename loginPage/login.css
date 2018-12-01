@@ -18,6 +18,10 @@ body{
     border-color: #EF6461;
 }
 
+#sub-container{
+    background-color: #EF6461;
+}
+
 @media (min-width: 576px) {
     
     #navBar{

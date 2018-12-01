@@ -1,4 +1,6 @@
+
 var UID = "";
+
 function renderDashboard() {
     return `
     <h1>What's In My Kitchen?</h1>
@@ -48,7 +50,7 @@ function writeUserData(ingredient) {
   });
 }
 
-// code for input box 
+// code for adding and removing items
 function addNewItem(item) {
     var ul = document.getElementById("list");
     var li = document.createElement("li");
@@ -70,6 +72,7 @@ function removeItem(e) {
     e.target.parentElement.removeChild(e.target);
 };
 
+//write existing data from firebase database for the signed in user
 function recallList(){
     ingredients.forEach(item => {
         addNewItem(item);
@@ -85,6 +88,5 @@ firebase.auth().onAuthStateChanged(function(user) {
         listenForUpdates();
     } else {
         window.location = "../";
-        alert('Please log in.');
     }
 });

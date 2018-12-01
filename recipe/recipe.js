@@ -160,7 +160,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         renderSelects(cuisines, "cuisines");
         renderSearchFunction();
     } else {
-        window.location = "../loginPage/login.html";
+        window.location = "../";
     }
 });
 

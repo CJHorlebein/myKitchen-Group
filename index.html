@@ -12,67 +12,51 @@
 <body>
 
     <div class="row flex-wrap mx-0">
-
         <div class="col-12 col-sm-3 col-lg-2 px-0 mx-0" id="sideNav">
-
             <nav class="navbar navbar-expand-sm w-75 navbar-dark align-items-start">
-
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
                     <div class="navbar-nav d-flex flex-column w-80 mx-auto">
-
                         <logo class="logo">
                             <img src="./logo.jpg" style="width:150px; border-radius:15px; padding:15px";/>
                         </logo>
-
                         <a class="nav-item btn text-white px-1 my-2 active" href="./index.html">Home</a>
                         <a class="nav-item btn text-white px-1 my-2" id="dashButton" href="./dashboard/dashboard.html">Dashboard</a>
                         <a class="nav-item btn text-white px-1 my-2" id="recipeButton" href="./recipe/index.html">Recipes</a>
                         <a class="nav-item btn r-1 px-1 my-2" id="signOut" onclick="signOut()" href="./index.html">Sign-Out</a>
                     </div>
-
                 </div>
-
             </nav>
-
         </div>
     
         <div class="col-12 col-sm-9 col-lg-10 px-0 position-relative" id="content">
 
             <div class="row flex-wrap mx-0 ">
-
                 <div class="w-75 mx-2 my-5 mx-auto d-flex text-center justify-content-center" style="color:black" >
                         <h1 class="font-weight-bold">My  Kitchen</h1>
                 </div>
-
             </div>
-            <div class="row flex-wrap" id="description" >
 
-                <div class="w-40% my-5 mx-auto p-3 shadow" style="border-radius: 15px;" id="content-board">
-                    
+            <div class="row flex-wrap" id="description" >
+                <div class="w-40% my-5 mx-auto p-3 shadow" style="border-radius: 15px;" id="content-board">                    
                     <p class="font-weight-bold font-italic" style="font-size:20px;">
-                        You get home from a long day of work. Your body and your mind and both out of energy. Then all of a sudden your stomach cries out for help. You run to the refrigerator in search of nourishment. 
-                        Then comes the bad news. There are only ingredients rather than acctual food. The frustration sets in. You don't even know what to make with what you have.
-                        Thats where we come in. You tell us what you have and we will give you a recipe you could make with it.
+                        You get home from a long day of work. Your body and your mind are both out of energy. Then all of a sudden your stomach cries out for help. You run to the refrigerator in search of nourishment. 
+                        Then comes the bad news. There are only ingredients rather than acctual food in there! The frustration sets in. You don't even know what to make with what you have.
+                        Thats where we come in. You tell us what you have and we will give you a recipe you can make with it.
                     </p>
                     <div class="d-flex justify-content-center">
                         <button type="button" class="btn btn-link"> <a class="text-white" href="./loginPage/login.html">Sign up/ Sign in</a></button>
                     </div>
                 </div>
-
             </div>
-            <div class="row flex-wrap" id="favrecipe">
 
+            <!-- Div for rendering trending recipe cards -->
+            <div class="row flex-wrap" id="favrecipe">
                 <div class="d-flex flex-wrap justify-content-around shadow" id="recipeCards">
                     
-                    
-
                 </div>
-
             </div>
             
         </div>

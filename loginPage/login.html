@@ -38,14 +38,16 @@
                 <a class="nav-item btn btn-success my-2" href="../">Home</a>
                 <a class="nav-item btn btn-success my-2" href="../dashboard/dashboard.html">Dashboard</a>
                 <a class="nav-item btn btn-success my-2" href="../recipe">Recipes</a>
-                <a class="nav-iten btn r-1 px-1 my-2" onClick="signOut()" href="../"></a>
+                <a class="nav-iten btn r-1 px-1 my-2" onClick="signOut()" href="../">Sign Out</a>
             </div>
         </div>
     </nav>
 
-    <div id="main-container" class="full-height">
-        <div class="mt-5 pt-5 justify-content-center" id='firebaseui-auth-container'>
-            
+    <div id="main-container" class="full-height d-flex flex-column align-items-center">
+        <h1 class="mt-5">My Kitchen</h1>
+        <h4 class="mt-5">Please sign in below.</h4>
+        <div id="sub-container" class="w-50 h-50 mt-5">
+            <div class="d-flex justify-content-center align-items-center" id='firebaseui-auth-container'></div>
         </div>
         <div id="loader">Loading...</div>
     </div>
