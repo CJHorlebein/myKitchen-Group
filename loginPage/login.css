@@ -12,6 +12,10 @@ body{
     background-color:#EFE93E;
 }
 
+.logoImg {
+    max-width: 120px;
+}
+
 .r-1{
     color: white;
     background-color: #EF6461;

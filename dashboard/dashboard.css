@@ -12,6 +12,10 @@ p {
     
 }
 
+.logoImg {
+    max-width: 120px;
+}
+
 input {
     padding-top: 15px;
     padding-bottom: 15px;

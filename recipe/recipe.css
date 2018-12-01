@@ -39,6 +39,10 @@
     height: 250px;
 }
 
+.logoImg {
+    max-width: 120px;
+}
+
 body{
     background-color:#F4E285;
     min-width: 400px;
