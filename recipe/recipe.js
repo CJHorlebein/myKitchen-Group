@@ -1,3 +1,4 @@
+// Logs out user from App/Firebase
 function signOut(){
     firebase.auth().signOut()
         .then(function(){
@@ -8,6 +9,7 @@ function signOut(){
         });
 }
 
+// Removes size selector for image URL or returns generic url if missing image
 function picCheck(picture){
     if(picture && picture != "null=s90"){
         return picture[0].slice(0, -4);
@@ -15,6 +17,8 @@ function picCheck(picture){
     return "https://cdn.dribbble.com/users/1012566/screenshots/4187820/topic-2.jpg"
 }
 
+
+// Returns list of search options for drop down menus
 function renderSelects(options, optionType){
     var temp = document.getElementById(optionType);
     options.forEach(type => {
@@ -22,12 +26,14 @@ function renderSelects(options, optionType){
     })
 }
 
+// returns list of ingredients for meal
 function listIngredients(ingredients){
     return ingredients.map(item => {
         return `<li class="h4"><span class="food">${item}</span></li>`;
     });
 }
 
+// Compares current ingredient to current inventory and highlights missing items in white
 function tagMissingIngredients(basic){
     var foodList = Array.from(document.getElementsByClassName("food"));
     for(var i = 0; i < basic.length; i++){
@@ -35,8 +41,9 @@ function tagMissingIngredients(basic){
     }
 }
 
+// Renders detailed meal information
 function renderMealDetails(mealDetails){
-    var meal = {
+    var meal = { // Required meal Info
         name: mealDetails.name,
         pic: picCheck([mealDetails.images[0].imageUrlsBySize["90"].slice(0,-2)]),
         ingredients: listIngredients(mealDetails.ingredientLines).join(""),
@@ -52,21 +59,26 @@ function renderMealDetails(mealDetails){
         </div>`;
 }
 
+// Performs API call for meal and renders meal info to page
 function mealDetails(mealInfo){
+    // Meal id and basic ingredients as input
     var recipes = document.getElementById('recipes');
     var mealInfo = mealInfo.split(",");
-    var ingredients = mealInfo.splice(1);
+    var ingredients = mealInfo.splice(1); // Ingredients list starts at 1
     var url = `http://api.yummly.com/v1/api/recipe/${mealInfo[0]}?_app_id=${apiInfo[0]}&_app_key=${apiInfo[1]}`;
     axios.get(url).then(response => {
+        // Renders meal based on API call
         recipes.innerHTML = renderMealDetails(response.data);
         tagMissingIngredients(ingredients);
     })
 }
 
+// Combines searched term with with drop down selections into a request URL
 function searchFormSubmitted(){
     var searchTerm = encodeURIComponent(document.getElementById("searchBar").value);
     document.getElementById("searchBar").value = "";
     searchItems.forEach(item => {
+        // Checks drop down for input
         var temp = document.getElementById(item).value;
         if(temp){
             searchTerm += searchDict[item] + temp;
@@ -75,9 +87,9 @@ function searchFormSubmitted(){
     return `http://api.yummly.com/v1/api/recipes?_app_id=${apiInfo[0]}&_app_key=${apiInfo[1]}&q=${searchTerm}&maxResult=32`;
 }
 
+// Renders recipe card layout
 function renderRecipeCard(recipe){
-    console.log(recipe.smallImageUrls)
-    var details = {
+    var details = { // Info needed to render
         pic: picCheck(recipe.smallImageUrls),
         name: recipe.recipeName,
         id: recipe.id,
@@ -94,20 +106,24 @@ function renderRecipeCard(recipe){
     </div>`
 }
 
+// Renders basic search box / search drop down buttons
 function renderSearchFunction(){
     var recipes = document.getElementById('recipes');
     var submit = document.getElementById('submit');
     submit.addEventListener('click', e => {
+        // Event listener for when to perform search
         e.preventDefault();
         axios.get(searchFormSubmitted()).then(response => {
+            // Performs API call using all inputted data using search func searchFormSubmitted()
             recipes.innerHTML = "";
-            response.data.matches.forEach(recipe => {
+            response.data.matches.forEach(recipe => { // appends new recipe card to page
                 recipes.innerHTML += renderRecipeCard(recipe);
             });
         });
     });
 }
 
+// Pulls current pantry from Firebase
 var ingredients = [];
 function pullIngredients(uid){
     database.ref(uid).on('value', snapshot => { 
@@ -117,6 +133,7 @@ function pullIngredients(uid){
     });
 }
 
+// Render function for basic page layout. 
 function renderRecipeSearch(){
     document.getElementById("main-container").innerHTML = `
         <div class="text-center">
@@ -152,7 +169,8 @@ function renderRecipeSearch(){
         </div>`
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
+// Waits for firebase to authorize user, then renders page
+firebase.auth().onAuthStateChanged(user => {
     if (user) {
         pullIngredients(user.uid);
         renderRecipeSearch();
