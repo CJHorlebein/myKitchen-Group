@@ -24,6 +24,7 @@ var url = `http://api.yummly.com/v1/api/recipes?_app_id=36fb4d31&_app_key=f367d4
             `;
         });
     });
+    
 
 function signOut(){
     firebase.auth().signOut()
