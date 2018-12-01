@@ -178,7 +178,7 @@ firebase.auth().onAuthStateChanged(user => {
         renderSelects(cuisines, "cuisines");
         renderSearchFunction();
     } else {
-        window.location = "../loginPage/login.html";
+        window.location = "../";
     }
 });
 

@@ -1,4 +1,4 @@
-// This function will take the last four character of the url that way it will make the img a better quality.
+// This function will take the last four characters of the pic url to delete auto sizing for better resolution
 function picQualityCheck(picture){
     if(picture){
         return picture[0].slice(0, -4);
