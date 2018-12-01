@@ -1,3 +1,4 @@
+var UID = "";
 function renderDashboard() {
     return `
     <h1>What's In My Kitchen?</h1>
@@ -6,18 +7,7 @@ function renderDashboard() {
          <h5>*press enter to add item and click the item to delete*</h5>
          <ul id="list"></ul>`
 }
- 
-firebase.auth().onAuthStateChanged(function(user) {
- 
-    if (user) {
-        var dashboardHTML = renderDashboard()
-        document.getElementById('main-container').innerHTML = dashboardHTML;
-    } else {
-        window.location = "http://localhost:3000";
-        alert('Please log in.');
-    }
-});
- 
+  
 function signOut(){
     firebase.auth().signOut()
         .then(function(){
@@ -28,8 +18,66 @@ function signOut(){
         });
 };
  
+
+// adds data to firebase
+
+var database = firebase.database();
+var ingredients = [];
+
+function listenForUpdates(){
+    console.log("I'm a teapot")
+  
+  var list = document.getElementById("list");
+  var foodList = [];
+  var pantry = database.ref(`${UID}`);
+
+  pantry.on('value',function(snapshot){ 
+
+    while(list.firstChild){
+      list.removeChild(list.firstChild);
+    }
+    
+    snapshot.forEach(function(entry){
+      var food = entry.val();
+      foodList.push(food)
+        
+      list.innerHTML += foodList;
+    });
+    ingredients = foodList;
+  });
+};
+
+function writeUserData() {
+    console.log("short and stout")
+    console.log(UID);
+  
+  var ingredient= document.getElementById("input").value;
+  
+  if(ingredient == ""){
+    alert("Please enter your ingredient.");
+    return;
+  }
+  
+  ingredients.push(ingredient)
+  database.ref(`${UID}`).set({
+    pantry: ingredients,
+  });
+  ingredient = "";
+
+
+  console.log(UID)
+}
+
+
+
+
+
+
+
+// code for input box 
  
 function addNewItem() {
+   
     var item = document.getElementById("input").value;
     var ul = document.getElementById("list");
     var li = document.createElement("li");
@@ -41,7 +89,9 @@ function addNewItem() {
 
 document.onkeyup = function(e) {
     if (e.keyCode == 13) {
+        writeUserData();
         addNewItem();
+        
     }
 };
 
@@ -51,3 +101,22 @@ function removeItem(e) {
 
 
 
+
+
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+ 
+    if (user) {
+        UID = user.uid 
+        console.log(user);
+        console.log(user.Wu);
+        console.log(user.uid);
+        var dashboardHTML = renderDashboard()
+        document.getElementById('main-container').innerHTML = dashboardHTML;
+        listenForUpdates();
+    } else {
+        window.location = "../";
+        alert('Please log in.');
+    }
+});
