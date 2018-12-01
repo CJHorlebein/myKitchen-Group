@@ -1,3 +1,6 @@
+// Base code and stored values for needed search information
+
+// Pulls API information from firebase
 var database = firebase.database();
 var apiInfo = []
 database.ref(`apiKey`).on('value', snapshot => {
@@ -6,24 +9,28 @@ database.ref(`apiKey`).on('value', snapshot => {
     })
 })
 
+// List of different search parameters
 var searchItems = [
     "meats", 
     "cuisines", 
     "diets"
 ];
 
+// API Required Search Information for GET/PULL Request
 var searchDict = {
     cuisines: "&allowedCuisine[]=cuisine^cuisine-",
     meats: "&allowedIngredient[]=",
     diets: "&allowedDiet[]="
 };
 
+// Ingredients to include
 var meats = [
     "chicken",
     "pork",
     "steak"
 ];
 
+// Diet types for API Request
 var diets = [
     "388^Lacto vegetarian",
     "389^Ovo vegetarian",
@@ -33,6 +40,7 @@ var diets = [
     "403^Paleo"
 ];
 
+// Cuisine types for API Request
 var cuisines = [
     "american",
     "kid-friendly",
