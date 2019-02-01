@@ -11,6 +11,9 @@ Date: Nov 15, 2018
 ## Project Concept:
 myKitchen is designed to allow users to pull recipes using an recipe API and compare ingredient requirements against what users currently have in their kitchen. 
 
+## Technologies:
+HTML, CSS, Javascript, Bootstrap, Firebase
+
 ### Changelog:
 1. 20181117 - Initial commit of myKitchen.
 2. 20181118 - Added Recipe HTML/CSS for to display recipe cards.
